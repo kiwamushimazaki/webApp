@@ -8,6 +8,7 @@ namespace WebApplication1.Controllers
     {
         private MvcBasicContext db = new MvcBasicContext();
         private MvcBasicContext2 db2 = new MvcBasicContext2();
+        private MvcBasicContext3 db3 = new MvcBasicContext3();
         //GET: Begin
         //public ActionResult Index()
         //{
@@ -33,6 +34,10 @@ namespace WebApplication1.Controllers
         {
             return View(db2.Incomes);
         }
-       
+        public ActionResult List3()
+        {
+            return View(db3.Datas);
+        }
+
     }
 }

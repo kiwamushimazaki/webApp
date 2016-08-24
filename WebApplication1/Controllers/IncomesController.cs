@@ -21,19 +21,19 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Incomes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Income income = db.Incomes.Find(id);
-            if (income == null)
-            {
-                return HttpNotFound();
-            }
-            return View(income);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Income income = db.Incomes.Find(id);
+        //    if (income == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(income);
+        //}
 
         // GET: Incomes/Create
         public ActionResult Create()
@@ -51,6 +51,7 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 db.Incomes.Add(income);
+                income.UserName = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -83,6 +84,7 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(income).State = EntityState.Modified;
+                income.UserName = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

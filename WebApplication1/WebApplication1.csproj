@@ -79,6 +79,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -204,15 +205,71 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608180525005_InitialCreate.cs" />
+    <Compile Include="Migrations\201608180525005_InitialCreate.Designer.cs">
+      <DependentUpon>201608180525005_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608191041154_AddUrl.cs" />
+    <Compile Include="Migrations\201608191041154_AddUrl.Designer.cs">
+      <DependentUpon>201608191041154_AddUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608220816504_InitialCreate.cs" />
+    <Compile Include="Migrations\201608220816504_InitialCreate.Designer.cs">
+      <DependentUpon>201608220816504_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608220911004_AddUrl1.cs" />
+    <Compile Include="Migrations\201608220911004_AddUrl1.Designer.cs">
+      <DependentUpon>201608220911004_AddUrl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608221009496_AddUrl2.cs" />
+    <Compile Include="Migrations\201608221009496_AddUrl2.Designer.cs">
+      <DependentUpon>201608221009496_AddUrl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240740374_AddUrl3.cs" />
+    <Compile Include="Migrations\201608240740374_AddUrl3.Designer.cs">
+      <DependentUpon>201608240740374_AddUrl3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240749173_AddUerName.cs" />
+    <Compile Include="Migrations\201608240749173_AddUerName.Designer.cs">
+      <DependentUpon>201608240749173_AddUerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240756338_AddUserName.cs" />
+    <Compile Include="Migrations\201608240756338_AddUserName.Designer.cs">
+      <DependentUpon>201608240756338_AddUserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240832598_AddUrl4.cs" />
+    <Compile Include="Migrations\201608240832598_AddUrl4.Designer.cs">
+      <DependentUpon>201608240832598_AddUrl4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240841211_AddUrl5.cs" />
+    <Compile Include="Migrations\201608240841211_AddUrl5.Designer.cs">
+      <DependentUpon>201608240841211_AddUrl5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240906591_AddUrl6.cs" />
+    <Compile Include="Migrations\201608240906591_AddUrl6.Designer.cs">
+      <DependentUpon>201608240906591_AddUrl6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240922394_AddUrl7.cs" />
+    <Compile Include="Migrations\201608240922394_AddUrl7.Designer.cs">
+      <DependentUpon>201608240922394_AddUrl7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608240932271_AddUrl-Force.cs" />
+    <Compile Include="Migrations\201608240932271_AddUrl-Force.Designer.cs">
+      <DependentUpon>201608240932271_AddUrl-Force.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Data.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Income.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Menber.cs" />
     <Compile Include="Models\MvcBasicContext.cs" />
     <Compile Include="Models\MvcBasicContext2.cs" />
+    <Compile Include="Models\MvcBasicContext3.cs" />
     <Compile Include="Models\MvcBasicInitializer.cs" />
     <Compile Include="Models\MvcBasicInitializer2.cs" />
+    <Compile Include="Models\MvcBasicInitializer3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -291,6 +348,7 @@
     <Content Include="Views\Incomes\Details.cshtml" />
     <Content Include="Views\Incomes\Edit.cshtml" />
     <Content Include="Views\Incomes\Index.cshtml" />
+    <Content Include="Views\Begin\List3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +360,50 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608180525005_InitialCreate.resx">
+      <DependentUpon>201608180525005_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608191041154_AddUrl.resx">
+      <DependentUpon>201608191041154_AddUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608220816504_InitialCreate.resx">
+      <DependentUpon>201608220816504_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608220911004_AddUrl1.resx">
+      <DependentUpon>201608220911004_AddUrl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221009496_AddUrl2.resx">
+      <DependentUpon>201608221009496_AddUrl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240740374_AddUrl3.resx">
+      <DependentUpon>201608240740374_AddUrl3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240749173_AddUerName.resx">
+      <DependentUpon>201608240749173_AddUerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240756338_AddUserName.resx">
+      <DependentUpon>201608240756338_AddUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240832598_AddUrl4.resx">
+      <DependentUpon>201608240832598_AddUrl4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240841211_AddUrl5.resx">
+      <DependentUpon>201608240841211_AddUrl5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240906591_AddUrl6.resx">
+      <DependentUpon>201608240906591_AddUrl6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240922394_AddUrl7.resx">
+      <DependentUpon>201608240922394_AddUrl7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240932271_AddUrl-Force.resx">
+      <DependentUpon>201608240932271_AddUrl-Force.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

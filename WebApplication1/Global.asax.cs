@@ -17,6 +17,7 @@ namespace WebApplication1
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<MvcBasicContext>(new MvcBasicInitializer());
             Database.SetInitializer<MvcBasicContext2>(new MvcBasicInitializer2());
+            Database.SetInitializer<MvcBasicContext3>(new MvcBasicInitializer3());
         }
     }
 }

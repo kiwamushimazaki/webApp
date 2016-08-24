@@ -6,34 +6,36 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
     public class MembersController : Controller
     {
-        private MvcBasicContext db = new MvcBasicContext();
+        private MvcBasicContext db = new MvcBasicContext(); 
+
 
         // GET: Members
         public ActionResult Index()
-        {
+        { 
             return View(db.Members.ToList());
         }
 
         // GET: Members/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Member member = db.Members.Find(id);
-            if (member == null)
-            {
-                return HttpNotFound();
-            }
-            return View(member);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Member member = db.Members.Find(id);
+        //    if (member == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(member);
+        //}
 
         // GET: Members/Create
         public ActionResult Create()
@@ -51,9 +53,11 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 db.Members.Add(member);
+                member.UserName = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
 
             return View(member);
         }
@@ -71,6 +75,7 @@ namespace WebApplication1.Controllers
                 return HttpNotFound();
             }
             return View(member);
+
         }
 
         // POST: Members/Edit/5
@@ -83,6 +88,7 @@ namespace WebApplication1.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(member).State = EntityState.Modified;
+                member.UserName = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -109,6 +115,7 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
             Member member = db.Members.Find(id);
             db.Members.Remove(member);
             db.SaveChanges();
